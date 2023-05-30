@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { theme } from "./theme";
+import { Container, Box } from "@mui/material";
+import { Register } from "./components/Register";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            bgcolor: "background.paper",
+            overflow: "hidden",
+            borderRadius: "12px",
+            boxShadow: 1,
+            minHeight: "100vh",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Register />
+        </Box>
+      </Container>
+      {/* Other components go here */}
+    </ThemeProvider>
   );
 }
 
